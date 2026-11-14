@@ -1,0 +1,61 @@
+---
+const steps = [
+  {
+    number: "01",
+    titulo: "Escolha seu Modelo",
+    descricao: "Navegue pelo nosso catálogo de cadernos, topos de bolo, lembrancinhas ou cartões comerciais.",
+    fundo: "bg-pastel-rose",
+  },
+  {
+    number: "02",
+    titulo: "Envie no WhatsApp",
+    descricao: "Clique no botão de pedido do item. A mensagem já vai pronta com o seu cupom do Clube Mania da Arte.",
+    fundo: "bg-pastel-peach",
+  },
+  {
+    number: "03",
+    titulo: "Personalização & Aprovação",
+    descricao: "Alinhamos cores, nomes, temas e enviamos a prévia digital para você aprovar antes da impressão.",
+    fundo: "bg-pastel-mint",
+  },
+  {
+    number: "04",
+    titulo: "Envio Rápido no Japão",
+    descricao: "Embalagem protetora especial e envio seguro para qualquer província do Japão via Japan Post ou Yamato.",
+    fundo: "bg-pastel-lavender",
+  },
+];
+---
+
+<section id="como-funciona" class="py-16 md:py-20 bg-paper-warm/50 border-t border-b border-brand-brown/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
+      <span class="text-xs uppercase tracking-[0.2em] text-brand-softBrown font-semibold">
+        Simples e Transparente
+      </span>
+      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-brown">
+        Como Fazer Seu Pedido
+      </h2>
+      <p class="text-sm text-brand-softBrown">
+        Sem complicação de carrinho: atendimento humano e carinhoso direto no seu WhatsApp.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {steps.map((step) => (
+        <div class="bg-white/80 p-6 rounded-2xl border border-brand-brown/10 shadow-sm flex flex-col justify-between space-y-4">
+          <div class="flex items-center justify-between">
+            <span class={`w-10 h-10 rounded-xl ${step.fundo} flex items-center justify-center font-serif font-bold text-brand-brown text-base`}>
+              {step.number}
+            </span>
+            <span class="text-[10px] uppercase font-bold tracking-wider text-brand-softBrown/70">Etapa</span>
+          </div>
+          <div>
+            <h3 class="font-serif text-lg font-bold text-brand-brown mb-1.5">{step.titulo}</h3>
+            <p class="text-xs text-brand-softBrown leading-relaxed">{step.descricao}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

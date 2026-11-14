@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import ClubBanner from "../components/ClubBanner.astro";
+import ProductGrid from "../components/ProductGrid.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Mania da Arte | Papelaria Personalizada & Clube de Vantagens no Japão"
+  description="Catálogo de cadernos personalizados, topos de bolo, lembrancinhas e cartões de visita no Japão. Entre no Clube Mania da Arte por ¥500/mês e garanta 15% OFF em todos os pedidos via WhatsApp."
+>
+  <Header />
+
+  <main class="flex-grow">
+    <!-- Destaque Principal: Seção Hero/Banner Clube Mania da Arte -->
+    <ClubBanner squareCheckoutUrl="https://square.link/u/maniadaarte" />
+
+    <!-- Catálogo de Produtos Vitrine -->
+    <ProductGrid />
+
+    <!-- Como Funciona o Pedido -->
+    <HowItWorks />
+  </main>
+
+  <Footer />
+</Layout>

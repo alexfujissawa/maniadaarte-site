@@ -1,0 +1,123 @@
+---
+import ProductCard from "./ProductCard.astro";
+import type { Produto } from "./ProductCard.astro";
+import produtosData from "../data/produtos.json";
+
+const produtos = produtosData as Produto[];
+const whatsappNumber = "817022973498";
+const whatsappCustomMsg = encodeURIComponent("Olá! Gostaria de fazer um projeto personalizado do zero com a Mania da Arte.");
+---
+
+<section id="catalogo" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Cabeçalho da Seção -->
+  <div class="text-center max-w-2xl mx-auto mb-12 space-y-4">
+    <span class="text-xs uppercase tracking-[0.2em] text-brand-softBrown font-semibold">
+      Catálogo Sob Encomenda
+    </span>
+    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-brown">
+      Peças Afetivas Feitas à Mão
+    </h2>
+    <p class="text-base text-brand-softBrown leading-relaxed">
+      Cada item é produzido artesanalmente no Japão com papéis especiais de alta gramatura e acabamentos premium.
+    </p>
+
+    <!-- Filtros de Categoria Interativos -->
+    <div class="flex flex-wrap items-center justify-center gap-2 pt-4" id="category-filters">
+      <button
+        type="button"
+        data-filter="all"
+        class="filter-btn active px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-brown text-paper-warm shadow-sm"
+      >
+        Todos os Itens
+      </button>
+      <button
+        type="button"
+        data-filter="rotina"
+        class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-paper-warm text-brand-brown hover:bg-brand-brown/10 border border-brand-brown/10"
+      >
+        Rotina & Agendas
+      </button>
+      <button
+        type="button"
+        data-filter="festas"
+        class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-paper-warm text-brand-brown hover:bg-brand-brown/10 border border-brand-brown/10"
+      >
+        Festas & Lembrancinhas
+      </button>
+      <button
+        type="button"
+        data-filter="corporativo"
+        class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-paper-warm text-brand-brown hover:bg-brand-brown/10 border border-brand-brown/10"
+      >
+        Corporativo & Negócios
+      </button>
+    </div>
+  </div>
+
+  <!-- Grid de Produtos -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8" id="products-container">
+    {produtos.map((produto) => (
+      <ProductCard produto={produto} />
+    ))}
+  </div>
+
+  <!-- Card de Encomenda Personalizada Especial -->
+  <div class="mt-14 p-8 sm:p-10 rounded-3xl bg-pastel-peach/60 border border-brand-rose/30 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+    <div class="space-y-2 text-center sm:text-left">
+      <h3 class="font-serif text-2xl font-bold text-brand-brown">
+        Tem uma ideia especial em mente?
+      </h3>
+      <p class="text-sm text-brand-softBrown max-w-xl">
+        Criamos projetos exclusivos desde o corte até a personalização com foil, relevo e laminação. Fale conosco diretamente pelo WhatsApp no Japão.
+      </p>
+    </div>
+    <a
+      href={`https://wa.me/${whatsappNumber}?text=${whatsappCustomMsg}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="shrink-0 px-6 py-3.5 rounded-full bg-brand-brown text-paper-warm font-semibold text-sm hover:bg-brand-darkBrown transition-colors shadow"
+    >
+      Pedir Projeto Personalizado
+    </a>
+  </div>
+</section>
+
+<script>
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const productCards = document.querySelectorAll<HTMLElement>('#products-container > article');
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      // Atualiza estado visual dos botões
+      filterBtns.forEach((b) => {
+        b.classList.remove('bg-brand-brown', 'text-paper-warm', 'shadow-sm');
+        b.classList.add('bg-paper-warm', 'text-brand-brown', 'border', 'border-brand-brown/10');
+      });
+      btn.classList.remove('bg-paper-warm', 'text-brand-brown', 'border', 'border-brand-brown/10');
+      btn.classList.add('bg-brand-brown', 'text-paper-warm', 'shadow-sm');
+
+      // Filtra os cards
+      productCards.forEach((card) => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'flex';
+          card.classList.add('animate-fadeIn');
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out forwards;
+  }
+</style>

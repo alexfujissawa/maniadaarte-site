@@ -1,0 +1,148 @@
+---
+interface Props {
+  squareCheckoutUrl?: string;
+}
+
+const {
+  squareCheckoutUrl = "https://square.link/u/maniadaarte", // Link da Square Japão para assinatura recorrente de ¥500
+} = Astro.props;
+---
+
+<section id="clube" class="relative overflow-hidden py-12 md:py-20 bg-gradient-to-b from-paper-warm/80 via-paper to-paper border-b border-brand-brown/10">
+  <!-- Elementos decorativos de papel sutil ao fundo -->
+  <div class="absolute -top-24 -right-24 w-96 h-96 bg-pastel-rose/40 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-pastel-peach/40 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10 lg:p-14 border border-brand-brown/15 shadow-paper transition-all duration-300 hover:shadow-paper-hover">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Conteúdo Textual / Conversão -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pastel-rose border border-brand-rose/40 text-brand-brown text-xs sm:text-sm font-semibold tracking-wide">
+            <span class="text-brand-terracotta">✨</span>
+            <span>Clube Mania da Arte • Japão</span>
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-brown leading-[1.15] tracking-tight">
+            Ganhe <span class="text-brand-terracotta underline decoration-pastel-rose decoration-wavy decoration-2">15% de desconto</span> em todas as suas encomendas.
+          </h1>
+
+          <p class="text-base sm:text-lg text-brand-softBrown leading-relaxed">
+            Seja para cadernos de rotina, topos de bolo inesquecíveis ou a papelaria do seu negócio: membros do nosso clube pagam menos em cada projeto artesanal feito no Japão.
+          </p>
+
+          <!-- Grid de Benefícios do Clube -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+            <div class="flex items-start gap-2.5">
+              <div class="w-5 h-5 rounded-full bg-pastel-mint flex items-center justify-center shrink-0 mt-0.5 text-brand-brown font-bold text-xs">✓</div>
+              <p class="text-sm text-brand-brown font-medium"><strong class="font-bold">15% OFF garantido</strong> em todo o catálogo</p>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <div class="w-5 h-5 rounded-full bg-pastel-peach flex items-center justify-center shrink-0 mt-0.5 text-brand-brown font-bold text-xs">✓</div>
+              <p class="text-sm text-brand-brown font-medium"><strong class="font-bold">Prioridade na fila</strong> de confecção artesanal</p>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <div class="w-5 h-5 rounded-full bg-pastel-rose flex items-center justify-center shrink-0 mt-0.5 text-brand-brown font-bold text-xs">✓</div>
+              <p class="text-sm text-brand-brown font-medium"><strong class="font-bold">Mimos surpresa</strong> adicionados às caixas</p>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <div class="w-5 h-5 rounded-full bg-pastel-lavender flex items-center justify-center shrink-0 mt-0.5 text-brand-brown font-bold text-xs">✓</div>
+              <p class="text-sm text-brand-brown font-medium"><strong class="font-bold">Sem carência:</strong> cancele com 1 clique</p>
+            </div>
+          </div>
+
+          <!-- CTAs de Ação -->
+          <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a
+              href={squareCheckoutUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-brand-brown text-paper-warm text-base font-semibold hover:bg-brand-darkBrown hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md group"
+            >
+              <span>Quero 15% OFF • Assinar por ¥500/mês</span>
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
+
+            <a
+              href="#catalogo"
+              class="inline-flex items-center justify-center px-6 py-4 rounded-full border border-brand-brown/25 text-brand-brown text-sm font-semibold hover:bg-paper-warm transition-colors"
+            >
+              Ver Peças do Catálogo
+            </a>
+          </div>
+
+          <div class="flex items-center gap-2 text-xs text-brand-softBrown/80 pt-1">
+            <svg class="w-4 h-4 text-brand-terracotta" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clip-rule="evenodd"/>
+            </svg>
+            <span>Assinatura mensal recorrente processada com segurança via Square Japão.</span>
+          </div>
+
+        </div>
+
+        <!-- Box de Preço & Resumo de Alto Impacto -->
+        <div class="lg:col-span-5">
+          <div class="relative bg-gradient-to-br from-paper-warm to-white p-7 sm:p-9 rounded-2xl border-2 border-brand-rose/40 shadow-sm space-y-6">
+            
+            <div class="absolute -top-3.5 right-6 bg-brand-terracotta text-white text-[11px] font-bold tracking-wider uppercase px-3 py-1 rounded-full shadow-sm">
+              Mais Popular
+            </div>
+
+            <div class="space-y-1">
+              <span class="text-xs uppercase tracking-widest text-brand-softBrown font-semibold">Assinatura Mensal</span>
+              <div class="flex items-baseline gap-2">
+                <span class="font-serif text-5xl font-extrabold text-brand-brown">¥500</span>
+                <span class="text-brand-softBrown text-sm font-medium">/ mês</span>
+              </div>
+              <p class="text-xs text-brand-softBrown italic">Menos de ¥17 por dia. Se paga com o desconto no primeiro pedido.</p>
+            </div>
+
+            <hr class="border-brand-brown/10" />
+
+            <!-- Simulação de Economia -->
+            <div class="bg-pastel-peach/50 rounded-xl p-4 border border-brand-rose/20 space-y-2">
+              <p class="text-xs font-bold text-brand-brown uppercase tracking-wider">Como funciona na prática:</p>
+              <div class="text-xs text-brand-softBrown space-y-1.5 leading-relaxed">
+                <div class="flex justify-between">
+                  <span>1. Você assina o Clube:</span>
+                  <span class="font-bold text-brand-brown">¥500/mês</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>2. Pede um Topo + Lembrancinhas:</span>
+                  <span class="font-bold text-brand-terracotta">-15% OFF</span>
+                </div>
+                <div class="flex justify-between border-t border-brand-brown/10 pt-1 font-semibold text-brand-brown">
+                  <span>Economia direta estimada:</span>
+                  <span class="text-green-700">¥1.200 ~ ¥3.000+</span>
+                </div>
+              </div>
+            </div>
+
+            <a
+              href={squareCheckoutUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full text-center block py-3.5 px-4 rounded-xl bg-brand-terracotta text-white font-semibold text-sm hover:bg-[#B36C5B] transition-colors shadow"
+            >
+              Ativar Desconto do Clube na Square Japão
+            </a>
+
+            <div class="text-center">
+              <span class="text-[11px] text-brand-softBrown/70">
+                Cancelamento sem burocracia a qualquer momento no portal do cliente.
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
