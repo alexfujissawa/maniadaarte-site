@@ -1,0 +1,213 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getCollection } from "astro:content";
+
+// Filtra rascunhos para produção
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.data.valueOf() - a.data.data.valueOf()
+);
+
+const categoriaLabels: Record<string, string> = {
+  "lembrancinhas": "Lembrancinhas",
+  "festas-infantis": "Festas Infantis",
+  "topos-de-bolo": "Topos de Bolo",
+  "presentes-afetivos": "Presentes Afetivos",
+  "dicas-de-decoracao": "Dicas de Decoração",
+  "rotina": "Rotina & Agendas",
+  "corporativo": "Empreendedorismo",
+};
+
+function formatarData(data: Date) {
+  return new Intl.DateTimeFormat("pt-BR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(data);
+}
+---
+
+<Layout
+  title="Blog & Dicas Criativas | Mania da Arte Japão"
+  description="Dicas de organização, rotina, festas de aniversário e papelaria afetiva para quem mora no Japão. Conteúdo exclusivo da Equipe Mania da Arte."
+>
+  <Header />
+
+  <main class="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow">
+    
+    <!-- Cabeçalho do Blog -->
+    <div class="text-center max-w-2xl mx-auto mb-14 space-y-4">
+      <span class="text-xs uppercase tracking-[0.25em] text-brand-softBrown font-semibold">
+        Diário Criativo no Japão
+      </span>
+      <h1 class="font-serif text-4xl sm:text-5xl font-bold text-brand-brown">
+        Blog da Mania da Arte
+      </h1>
+      <p class="text-base text-brand-softBrown leading-relaxed">
+        Inspirações afetuosas, lembrancinhas e ideias de papelaria para celebrar datas especiais e sua rotina no Japão.
+      </p>
+
+      <!-- Filtros de Categoria Interativos -->
+      <div class="flex flex-wrap items-center justify-center gap-2 pt-4" id="blog-filters">
+        <button
+          type="button"
+          data-filter="all"
+          class="blog-filter-btn active px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-brand-brown text-paper-warm shadow-sm"
+        >
+          Todos os Artigos
+        </button>
+        <button
+          type="button"
+          data-filter="lembrancinhas"
+          class="blog-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-paper-warm text-brand-brown hover:bg-brand-brown/10 border border-brand-brown/10"
+        >
+          Lembrancinhas
+        </button>
+        <button
+          type="button"
+          data-filter="festas-infantis"
+          class="blog-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-paper-warm text-brand-brown hover:bg-brand-brown/10 border border-brand-brown/10"
+        >
+          Festas Infantis
+        </button>
+        <button
+          type="button"
+          data-filter="topos-de-bolo"
+          class="blog-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-paper-warm text-brand-brown hover:bg-brand-brown/10 border border-brand-brown/10"
+        >
+          Topos de Bolo
+        </button>
+        <button
+          type="button"
+          data-filter="rotina"
+          class="blog-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-paper-warm text-brand-brown hover:bg-brand-brown/10 border border-brand-brown/10"
+        >
+          Rotina & Agendas
+        </button>
+      </div>
+    </div>
+
+    <!-- Grid de Artigos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-posts-grid">
+      {posts.map((post) => (
+        <article
+          class="group bg-white rounded-3xl p-5 border border-brand-brown/10 shadow-paper hover:shadow-paper-hover transition-all duration-300 flex flex-col justify-between"
+          data-category={post.data.categoria}
+        >
+          <div>
+            <!-- Box de Imagem Flutuante Estilo Papier -->
+            <a href={`/blog/${post.slug}`} class="block overflow-hidden rounded-2xl relative">
+              <div class={`w-full aspect-[16/10] ${post.data.corFundoPastel} p-6 flex items-center justify-center`}>
+                <span class="absolute top-3 left-3 bg-white/95 text-brand-brown text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full shadow-sm z-10">
+                  {categoriaLabels[post.data.categoria] || post.data.categoria}
+                </span>
+                <img
+                  src={post.data.imagem}
+                  alt={post.data.titulo}
+                  class="w-3/4 h-3/4 object-contain filter drop-shadow-md group-hover:scale-105 group-hover:-translate-y-1 transition-all duration-300"
+                  loading="lazy"
+                />
+              </div>
+            </a>
+
+            <!-- Informações do Post -->
+            <div class="mt-5 space-y-2.5">
+              <div class="flex items-center gap-2 text-xs text-brand-softBrown/70">
+                <time datetime={post.data.data.toISOString()}>
+                  {formatarData(post.data.data)}
+                </time>
+                <span>•</span>
+                <span>Por {post.data.autor}</span>
+              </div>
+
+              <h2 class="font-serif text-xl sm:text-2xl font-bold text-brand-brown group-hover:text-brand-terracotta transition-colors leading-snug">
+                <a href={`/blog/${post.slug}`}>
+                  {post.data.titulo}
+                </a>
+              </h2>
+
+              <p class="text-sm text-brand-softBrown line-clamp-3 leading-relaxed">
+                {post.data.descricao}
+              </p>
+            </div>
+          </div>
+
+          <!-- Rodapé do Card -->
+          <div class="mt-6 pt-4 border-t border-brand-brown/10 flex items-center justify-between">
+            <a
+              href={`/blog/${post.slug}`}
+              class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-brown group-hover:text-brand-terracotta transition-colors uppercase tracking-wider"
+            >
+              <span>Ler artigo</span>
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
+
+            {post.data.destaque && (
+              <span class="text-[10px] bg-pastel-rose text-brand-brown px-2 py-0.5 rounded-full font-bold">
+                ⭐ Destaque
+              </span>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Banner Chamada para o Clube -->
+    <div class="mt-16 p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-pastel-peach/70 via-pastel-rose/50 to-pastel-lavender/60 border border-brand-rose/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+      <div class="space-y-2 text-center md:text-left">
+        <span class="inline-block px-3 py-1 rounded-full bg-white text-brand-brown text-xs font-bold">
+          ✨ Vantagem Exclusiva
+        </span>
+        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-brand-brown">
+          Gostou das peças? Membros do Clube têm 15% OFF
+        </h3>
+        <p class="text-sm text-brand-softBrown max-w-xl">
+          Por apenas ¥500/mês na Square Japão, garanta desconto permanente em todas as agendas, topos de bolo e lembrancinhas.
+        </p>
+      </div>
+      <a
+        href="https://square.link/u/maniadaarte"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="shrink-0 px-8 py-4 rounded-full bg-brand-brown text-paper-warm font-semibold text-sm hover:bg-brand-darkBrown transition-transform hover:scale-105 shadow"
+      >
+        Entrar no Clube (¥500/mês)
+      </a>
+    </div>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const filterBtns = document.querySelectorAll<HTMLButtonElement>('.blog-filter-btn');
+  const postArticles = document.querySelectorAll<HTMLElement>('#blog-posts-grid > article');
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      // Atualiza botões
+      filterBtns.forEach((b) => {
+        b.classList.remove('bg-brand-brown', 'text-paper-warm', 'shadow-sm');
+        b.classList.add('bg-paper-warm', 'text-brand-brown', 'border', 'border-brand-brown/10');
+      });
+      btn.classList.remove('bg-paper-warm', 'text-brand-brown', 'border', 'border-brand-brown/10');
+      btn.classList.add('bg-brand-brown', 'text-paper-warm', 'shadow-sm');
+
+      // Filtra artigos
+      postArticles.forEach((article) => {
+        const cat = article.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          article.style.display = 'flex';
+        } else {
+          article.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
