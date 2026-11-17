@@ -28,7 +28,7 @@ Site vitrine e catálogo oficial da papelaria personalizada e afetiva **Mania da
 ---
 
 ## 📞 Canais de Atendimento
-- **WhatsApp Internacional (Japão):** `+81 70-2297-3498` (`https://wa.me/817022973498`)
+- **WhatsApp Internacional (Japão):** `+81 70-8415-0288` (`https://wa.me/817084150288`)
 - **Instagram Oficial:** `https://instagram.com/mania.daarte`
 
 ---
