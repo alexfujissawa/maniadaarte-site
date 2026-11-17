@@ -6,31 +6,64 @@ const squareClubUrl = "https://square.link/u/maniadaarte";
 ---
 
 <header class="sticky top-0 z-40 bg-paper/95 backdrop-blur-md border-b border-brand-brown/10 transition-all duration-300">
-  <!-- Topo Informativo -->
-  <div class="bg-brand-brown text-paper-warm text-xs py-1.5 px-4 text-center font-medium tracking-wider">
-    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
-      <span class="inline-block w-2 h-2 rounded-full bg-brand-rose animate-pulse"></span>
-      <span>📦 Enviamos para todo o Japão! • Produção artesanal • 15% de desconto exclusivo para membros do Clube</span>
+  <!-- Topo Informativo em Movimento (Ticker Contínuo) -->
+  <div class="bg-brand-brown text-paper-warm text-xs py-2 overflow-hidden border-b border-brand-brown/20 font-medium tracking-wider select-none">
+    <div class="marquee-track flex whitespace-nowrap">
+      <div class="marquee-content flex items-center gap-8 shrink-0 pr-8">
+        <span class="inline-flex items-center gap-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-brand-rose animate-pulse"></span>
+          <span class="font-semibold text-white">📦 Enviamos para todo o Japão!</span>
+        </span>
+        <span class="text-brand-rose/60">•</span>
+        <span>✨ Produção artesanal & afetiva no Japão</span>
+        <span class="text-brand-rose/60">•</span>
+        <span class="inline-flex items-center gap-1.5 font-semibold text-pastel-peach">
+          <span>🏷️ 15% de desconto exclusivo para membros do Clube</span>
+        </span>
+        <span class="text-brand-rose/60">•</span>
+        <span>🇯🇵 Atendimento carinhoso em Português</span>
+        <span class="text-brand-rose/60">•</span>
+        <span>💌 Embalagem protetora e envio seguro</span>
+        <span class="text-brand-rose/60">•</span>
+      </div>
+      <!-- Bloco duplicado para loop infinito suave -->
+      <div class="marquee-content flex items-center gap-8 shrink-0 pr-8" aria-hidden="true">
+        <span class="inline-flex items-center gap-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-brand-rose animate-pulse"></span>
+          <span class="font-semibold text-white">📦 Enviamos para todo o Japão!</span>
+        </span>
+        <span class="text-brand-rose/60">•</span>
+        <span>✨ Produção artesanal & afetiva no Japão</span>
+        <span class="text-brand-rose/60">•</span>
+        <span class="inline-flex items-center gap-1.5 font-semibold text-pastel-peach">
+          <span>🏷️ 15% de desconto exclusivo para membros do Clube</span>
+        </span>
+        <span class="text-brand-rose/60">•</span>
+        <span>🇯🇵 Atendimento carinhoso em Português</span>
+        <span class="text-brand-rose/60">•</span>
+        <span>💌 Embalagem protetora e envio seguro</span>
+        <span class="text-brand-rose/60">•</span>
+      </div>
     </div>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-24">
       
-      <!-- Logo da Marca -->
-      <a href="/" class="flex items-center gap-3 group py-1" aria-label="Mania da Arte Home">
+      <!-- Logo da Marca com Maior Destaque -->
+      <a href="/" class="flex items-center gap-3.5 group py-1.5" aria-label="Mania da Arte Home">
         <div class="relative shrink-0">
           <img 
             src="/images/logo-mania.png" 
             alt="Mania da Arte Logo" 
-            class="h-11 w-11 sm:h-12 sm:w-12 rounded-2xl object-cover shadow-sm border border-brand-brown/10 group-hover:scale-105 transition-all duration-300"
+            class="h-14 w-14 sm:h-16 sm:w-16 rounded-2xl object-cover shadow-md border-2 border-brand-brown/10 group-hover:scale-105 group-hover:shadow-lg transition-all duration-300"
           />
         </div>
-        <div class="flex flex-col">
-          <span class="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-brand-brown group-hover:text-brand-terracotta transition-colors">
+        <div class="flex flex-col justify-center">
+          <span class="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-brand-brown group-hover:text-brand-terracotta transition-colors leading-none mb-1">
             Mania da Arte
           </span>
-          <span class="text-[10px] tracking-[0.25em] uppercase text-brand-softBrown font-medium">
+          <span class="text-xs sm:text-[11px] tracking-[0.28em] uppercase text-brand-softBrown font-semibold">
             Papelaria Personalizada
           </span>
         </div>
@@ -157,3 +190,23 @@ const squareClubUrl = "https://square.link/u/maniadaarte";
     });
   });
 </script>
+
+<style>
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-track {
+    width: max-content;
+    animation: marquee 32s linear infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+</style>
