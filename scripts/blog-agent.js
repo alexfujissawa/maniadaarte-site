@@ -6,20 +6,13 @@ import { execSync } from 'child_process';
  * 🤖 AGENTE DE CONTEÚDO DO BLOG — MANIA DA ARTE JAPÃO
  * 
  * Segue rigorosamente o protocolo de 'Instruções_Maniadaarte.md':
- *  - Categorias oficiais: lembrancinhas, festas-infantis, topos-de-bolo, presentes-afetivos, dicas-de-decoracao, rotina, corporativo
+ *  - Categorias: lembrancinhas, festas-infantis, topos-de-bolo, presentes-afetivos, dicas-de-decoracao, rotina, corporativo
  *  - Autor: "Equipe Mania da Arte"
  *  - Tom de voz: Afetuoso, doce, materno, focado em papelaria no Japão
- *  - Sem clichês robóticos (ex: "Em resumo", "Otimizar recursos", "Mergulhe conosco")
- *  - Suporte à trava de segurança (modo rascunho com flag --draft)
- * 
- * Modos de uso:
- *  1. Automático: node scripts/blog-agent.js --auto
- *  2. Tema específico: node scripts/blog-agent.js --tema "Dicas de Topos de Bolo para Chá de Bebê no Japão"
- *  3. Modo Rascunho (Fase 2 de testes): node scripts/blog-agent.js --auto --draft
- *  4. Com Deploy imediato no Git/Vercel: node scripts/blog-agent.js --auto --git
+ *  - Filtro Anti-Clichês robóticos
+ *  - Agendado automaticamente toda Segunda e Quinta às 06h (fuso Japão) via GitHub Actions
  */
 
-// Palavras e clichês proibidos pelo protocolo da Mania da Arte
 const clichesProibidos = [
   /em resumo/i,
   /otimizar recursos/i,
@@ -29,7 +22,6 @@ const clichesProibidos = [
   /em suma/i
 ];
 
-// Banco de temas categorizados conforme a Fase 1 do documento
 const bancoTemas = [
   {
     titulo: "Lembrancinhas de Maternidade no Japão: Como Celebrar a Chegada do Bebê com Doçura",
@@ -128,6 +120,60 @@ const bancoTemas = [
         conteudo: "Tons pastéis suaves como rosa blush, pêssego e menta trazem a delicadeza perfeita sem sobrecarregar o ambiente visualmente."
       }
     ]
+  },
+  {
+    titulo: "Chá Revelação e Chá de Bebê no Japão: Detalhes Encantadores para Celebrar a Família",
+    descricao: "Como preparar uma mesa de chá revelação intimista e inesquecível no Japão com caixinhas interativas e topos de bolo personalizados.",
+    categoria: "lembrancinhas",
+    corFundoPastel: "bg-[#F3E5E8]",
+    imagem: "/images/lembrancinha-mania.png",
+    tags: ["chá revelação", "chá de bebê", "maternidade japão", "família"],
+    secoes: [
+      {
+        subtitulo: "A emoção de reunir amigos próximos",
+        conteudo: "Mesmo longe do Brasil, o chá revelação no Japão é um dos momentos mais doces. Caixinhas com confetes e fitas duplas criam o suspense ideal para o grande anúncio."
+      },
+      {
+        subtitulo: "Paleta de cores elegante e atemporal",
+        conteudo: "Combinamos o rosa clássico e o azul sereno com tons neutros como areia e dourado, garantindo sofisticação às lembrancinhas."
+      }
+    ]
+  },
+  {
+    titulo: "Batizado e Primeira Comunhão no Japão: Lembrancinhas que Eternizam a Fé",
+    descricao: "Marcadores de página, mini livretos de oração e caixas anjinho para momentos de fé e bênção com a comunidade brasileira no Japão.",
+    categoria: "presentes-afetivos",
+    corFundoPastel: "bg-[#FCF0E3]",
+    imagem: "/images/caderno-mania.png",
+    tags: ["batizado no japão", "primeira comunhão", "fé", "lembrancinhas"],
+    secoes: [
+      {
+        subtitulo: "Mimos delicados e cheios de significado",
+        conteudo: "O batizado nas igrejas e paróquias brasileiras no Japão pede lembranças serenas. Papéis texturizados em linho e cortes a laser em formato de anjinhos transmitem a pureza da data."
+      },
+      {
+        subtitulo: "Padrinhos e avós no Brasil e no Japão",
+        conteudo: "Criamos caixas com fotos e mensagens especiais para enviar aos familiares no Brasil ou entregar em mãos aos padrinhos aqui no Japão."
+      }
+    ]
+  },
+  {
+    titulo: "Agendas de Turnos no Japão: Como Organizar Folgas, Turnos Noturnos e Família",
+    descricao: "O planner perfeito para quem trabalha em turnos alternados (Koutai) nas fábricas do Japão e quer manter o tempo com a família protegido.",
+    categoria: "rotina",
+    corFundoPastel: "bg-[#E2ECE9]",
+    imagem: "/images/caderno-mania.png",
+    tags: ["turnos no japão", "koutai", "rotina", "planner"],
+    secoes: [
+      {
+        subtitulo: "Dominando os turnos diurnos e noturnos",
+        conteudo: "Alternar semanas de dia e noite é desafiador para o corpo e para o convívio. Codificar os turnos por cores em um planner físico traz clareza imediata para toda a casa."
+      },
+      {
+        subtitulo: "Planejamento dos feriados longos",
+        conteudo: "Programe suas viagens de Golden Week, Obon e Oshougatsu com antecedência, reservando dias de descanso real com quem você ama."
+      }
+    ]
   }
 ];
 
@@ -145,7 +191,6 @@ function slugify(text) {
 function validarTomDeVoz(texto) {
   for (const regex of clichesProibidos) {
     if (regex.test(texto)) {
-      console.warn(`⚠️ [AUDITORIA]: Clichê proibido detectado: ${regex}. Removendo automaticamente...`);
       texto = texto.replace(regex, '');
     }
   }
@@ -163,7 +208,6 @@ function gerarPost(temaEscolhido, isDraft = false) {
 
   const arquivoPath = path.join(pastaBlog, `${slug}.md`);
 
-  // Monta o corpo do artigo seguindo o tom afetivo exigido
   let markdown = `---
 titulo: "${temaEscolhido.titulo}"
 descricao: "${temaEscolhido.descricao}"
@@ -187,7 +231,6 @@ ${temaEscolhido.descricao}
     markdown += `## ${secao.subtitulo}\n\n${secao.conteudo}\n\n`;
   }
 
-  // Conclusão com convite afetuoso + Clube Mania da Arte + WhatsApp (conforme Fase 2 do protocolo)
   markdown += `---
 
 ## Vamos criar uma celebração linda juntos no Japão?
@@ -248,9 +291,30 @@ if (temaArgIndex !== -1 && args[temaArgIndex + 1]) {
 
   const temasDisponiveis = bancoTemas.filter(t => !postsExistentes.includes(slugify(t.titulo)));
 
-  temaEscolhido = temasDisponiveis.length > 0 
-    ? temasDisponiveis[0] 
-    : bancoTemas[Math.floor(Math.random() * bancoTemas.length)];
+  if (temasDisponiveis.length > 0) {
+    temaEscolhido = temasDisponiveis[0];
+  } else {
+    // Gerador dinâmico de novos tópicos quando a lista fixa for concluída
+    const timestamp = Date.now().toString().slice(-4);
+    temaEscolhido = {
+      titulo: `Tendências e Inspirações de Papelaria Afetiva no Japão #${timestamp}`,
+      descricao: `Novas ideias criativas de papelaria artesanal para decorar, organizar e comemorar suas datas especiais no Japão.`,
+      categoria: "dicas-de-decoracao",
+      corFundoPastel: "bg-[#FCF0E3]",
+      imagem: "/images/caderno-mania.png",
+      tags: ["papelaria afetiva", "novidades", "japão", "decoração"],
+      secoes: [
+        {
+          subtitulo: "Detalhes feitos à mão que encantam",
+          conteudo: "Cada nova criação traz acabamentos exclusivos com papéis especiais de alta gramatura, foil metálico e recortes tridimensionais pensados para a sua família."
+        },
+        {
+          subtitulo: "Peça seu orçamento pelo WhatsApp",
+          conteudo: "Entre em contato conosco e receba seu atendimento em português com envio rápido para todas as províncias do Japão."
+        }
+      ]
+    };
+  }
 }
 
 const resultado = gerarPost(temaEscolhido, isDraft);
