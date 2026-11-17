@@ -12,13 +12,20 @@ const currentYear = new Date().getFullYear();
       
       <!-- Marca & Propósito -->
       <div class="md:col-span-5 space-y-4">
-        <a href="/" class="flex flex-col inline-block group">
-          <span class="font-serif text-2xl font-bold tracking-tight text-brand-brown group-hover:text-brand-terracotta transition-colors">
-            Mania da Arte
-          </span>
-          <span class="text-[10px] tracking-[0.25em] uppercase text-brand-softBrown font-medium">
-            Papelaria Personalizada & Afetiva
-          </span>
+        <a href="/" class="flex items-center gap-3 group">
+          <img 
+            src="/images/logo-mania.png" 
+            alt="Mania da Arte Logo" 
+            class="h-10 w-10 rounded-xl object-cover shadow-sm border border-brand-brown/10 group-hover:scale-105 transition-all duration-300" 
+          />
+          <div class="flex flex-col">
+            <span class="font-serif text-2xl font-bold tracking-tight text-brand-brown group-hover:text-brand-terracotta transition-colors">
+              Mania da Arte
+            </span>
+            <span class="text-[10px] tracking-[0.25em] uppercase text-brand-softBrown font-medium">
+              Papelaria Personalizada & Afetiva
+            </span>
+          </div>
         </a>
         <p class="text-xs sm:text-sm text-brand-softBrown leading-relaxed max-w-sm">
           Ateliê de papelaria artesanal no Japão dedicado a transformar momentos, celebrações e marcas em memórias palpáveis com beleza e carinho.
