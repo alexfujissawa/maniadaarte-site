@@ -5,7 +5,7 @@ data: 2026-11-17
 categoria: "corporativo"
 imagem: "/images/cartao-visita-mania.png"
 corFundoPastel: "bg-[#E2ECE9]"
-autor: "Mania da Arte"
+autor: "Equipe Mania da Arte"
 tags: ["empreendedorismo", "meishi", "cartão de visita", "negócios no japão"]
 destaque: false
 ---

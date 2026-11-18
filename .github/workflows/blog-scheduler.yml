@@ -28,6 +28,9 @@ jobs:
       - name: 🤖 Executar Agente de Conteúdo Mania da Arte
         run: node scripts/blog-agent.js --auto
 
+      - name: 🔍 Auditar e Auto-Corrigir Artigos (Anti-Clichês & Protocolo)
+        run: node scripts/audit-posts.js
+
       - name: 🚀 Commit e Push do Novo Artigo para a Vercel
         run: |
           git config --global user.name "Equipe Mania da Arte"

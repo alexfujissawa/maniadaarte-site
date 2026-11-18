@@ -5,7 +5,7 @@ data: 2026-11-15
 categoria: "rotina"
 imagem: "/images/caderno-mania.png"
 corFundoPastel: "bg-[#F3E5E8]"
-autor: "Mania da Arte"
+autor: "Equipe Mania da Arte"
 tags: ["organização", "rotina no japão", "agendas", "papelaria afetiva"]
 destaque: true
 ---
@@ -41,3 +41,14 @@ Para quem mora no Japão, recomendamos dividir a semana em 3 blocos simples:
 Sabia que membros do **Clube Mania da Arte** garantem **15% de desconto** imediato em todas as nossas agendas e cadernos afetivos?
 
 Por apenas **¥500/mês** (assinatura recorrente via Square Japão), você tem desconto em todas as suas encomendas de papelaria do ano todo, além de prioridade na produção artesanal!
+
+---
+
+## Vamos criar uma celebração linda juntos no Japão?
+
+Se você sonha com uma festa cheia de amor, uma lembrancinha inesquecível ou quer presentear alguém especial aqui no Japão, a **Equipe Mania da Arte** está pronta para sonhar junto com você.
+
+✨ **Vantagem para Membros do Clube:** 
+Lembre-se de que os membros do nosso **Clube Mania da Arte** garantem **15% de desconto** imediato em todas as peças do catálogo por apenas **¥500/mês**, além de prioridade na fila de confecção!
+
+Fale conosco diretamente pelo WhatsApp no Japão: **[+81 70-2297-3498](https://wa.me/817022973498)** e receba a prévia digital da sua arte com todo o carinho.

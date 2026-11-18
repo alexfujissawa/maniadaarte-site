@@ -33,3 +33,14 @@ Sabemos que os primeiros dias pós-parto são intensos. Por isso, na Mania da Ar
 Você sabia que membros do **Clube Mania da Arte** garantem **15% de desconto** imediato em todas as encomendas de papelaria do nosso catálogo?
 
 Com uma assinatura simples de apenas **¥500/mês via Square Japão**, você economiza em cadernos, topos de bolo, lembrancinhas e materiais corporativos o ano todo, além de receber prioridade na produção artesanal!
+
+---
+
+## Vamos criar uma celebração linda juntos no Japão?
+
+Se você sonha com uma festa cheia de amor, uma lembrancinha inesquecível ou quer presentear alguém especial aqui no Japão, a **Equipe Mania da Arte** está pronta para sonhar junto com você.
+
+✨ **Vantagem para Membros do Clube:** 
+Lembre-se de que os membros do nosso **Clube Mania da Arte** garantem **15% de desconto** imediato em todas as peças do catálogo por apenas **¥500/mês**, além de prioridade na fila de confecção!
+
+Fale conosco diretamente pelo WhatsApp no Japão: **[+81 70-2297-3498](https://wa.me/817022973498)** e receba a prévia digital da sua arte com todo o carinho.

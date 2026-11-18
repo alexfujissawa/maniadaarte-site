@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "auditar": "node scripts/audit-posts.js",
     "post:novo": "node scripts/blog-agent.js",
     "post:auto": "node scripts/blog-agent.js --auto --git"
   },
