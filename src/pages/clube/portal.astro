@@ -1,0 +1,269 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const whatsappNumber = "817022973498";
+const whatsappVipMsg = encodeURIComponent(
+  "Olá Equipe Mania da Arte! Sou membro ativo do Clube e gostaria de fazer uma encomenda com meus 15% de desconto e atendimento prioritário!"
+);
+const whatsappVipUrl = `https://wa.me/${whatsappNumber}?text=${whatsappVipMsg}`;
+const squareManageUrl = "https://square.link/u/maniadaarte"; // Link da Square Japão para gerenciar assinatura
+---
+
+<Layout
+  title="Portal do Membro | Clube Mania da Arte Japão"
+  description="Área exclusiva dos assinantes do Clube Mania da Arte. Acesse sua carteirinha digital com 15% OFF, atendimento prioritário no WhatsApp e mimos do mês para imprimir."
+>
+  <Header />
+
+  <main class="py-12 md:py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow">
+    
+    <!-- Cabeçalho de Boas-Vindas -->
+    <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pastel-rose border border-brand-rose/40 text-brand-brown text-xs font-semibold">
+        <span class="text-brand-terracotta">✨</span>
+        <span>Área Exclusiva de Membros</span>
+      </div>
+      <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-brown">
+        Portal do Clube Mania da Arte
+      </h1>
+      <p class="text-base text-brand-softBrown leading-relaxed">
+        Seja bem-vindo(a) ao seu espaço especial! Aqui você acessa seus benefícios exclusivos, downloads do mês e canal VIP no WhatsApp.
+      </p>
+    </div>
+
+    <!-- Carteirinha Digital Interativa do Membro -->
+    <div class="mb-14">
+      <div class="relative max-w-md mx-auto bg-gradient-to-br from-paper via-white to-pastel-rose/40 rounded-3xl p-6 sm:p-8 border-2 border-brand-rose/50 shadow-paper hover:shadow-paper-hover transition-all duration-300">
+        
+        <!-- Detalhe superior da carteirinha -->
+        <div class="flex items-center justify-between pb-4 border-b border-brand-brown/10">
+          <div class="flex items-center gap-2.5">
+            <span class="font-serif text-lg font-bold text-brand-brown">Mania da Arte</span>
+            <span class="text-[10px] uppercase font-bold tracking-widest bg-brand-brown text-paper-warm px-2 py-0.5 rounded-full">
+              VIP
+            </span>
+          </div>
+          <span class="flex h-3 w-3 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+          </span>
+        </div>
+
+        <!-- Conteúdo da Carteirinha -->
+        <div class="py-6 space-y-4">
+          <div>
+            <span class="text-[10px] uppercase tracking-wider text-brand-softBrown font-semibold block">Membro Oficial:</span>
+            <div class="flex items-center justify-between gap-2 mt-1">
+              <span id="member-name-display" class="font-serif text-2xl font-bold text-brand-brown">
+                Membro Especial
+              </span>
+              <button
+                id="edit-name-btn"
+                type="button"
+                class="text-xs text-brand-terracotta hover:underline font-medium"
+                title="Personalizar seu nome na carteirinha"
+              >
+                (Alterar nome)
+              </button>
+            </div>
+          </div>
+
+          <!-- Cupom Ativo -->
+          <div class="p-3.5 rounded-2xl bg-pastel-peach/60 border border-brand-rose/30 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] uppercase font-bold text-brand-softBrown block">Seu Desconto Fixo:</span>
+              <span class="font-serif text-xl font-extrabold text-brand-brown">15% OFF em Tudo</span>
+            </div>
+            <span class="text-xs bg-white text-brand-brown font-bold px-3 py-1.5 rounded-xl shadow-sm border border-brand-brown/10">
+              CLUBE15
+            </span>
+          </div>
+        </div>
+
+        <!-- Rodapé da carteirinha -->
+        <div class="pt-4 border-t border-brand-brown/10 flex items-center justify-between text-xs text-brand-softBrown">
+          <span>Assinatura Ativa (¥500/mês)</span>
+          <span class="text-[10px] font-mono">ID: JP-CLUBE-2026</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Grade de Ações Rápidas do Membro -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      
+      <!-- Card 1: Canal VIP no WhatsApp -->
+      <div class="bg-white rounded-3xl p-6 border border-brand-brown/10 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="space-y-2">
+          <div class="w-12 h-12 rounded-2xl bg-pastel-mint flex items-center justify-center text-xl">
+            💬
+          </div>
+          <h3 class="font-serif text-xl font-bold text-brand-brown">
+            Atendimento Prioritário
+          </h3>
+          <p class="text-xs sm:text-sm text-brand-softBrown leading-relaxed">
+            Pule a fila comum! Envie seu pedido pelo nosso canal direto com o selo de membro do Clube e garanta seus 15% OFF.
+          </p>
+        </div>
+        <a
+          href={whatsappVipUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full text-center py-3 rounded-full bg-brand-brown text-paper-warm font-semibold text-xs sm:text-sm hover:bg-brand-darkBrown transition-colors shadow"
+        >
+          Falar na Linha VIP (+81 70-2297-3498)
+        </a>
+      </div>
+
+      <!-- Card 2: Mimos Digitais do Mês -->
+      <div class="bg-white rounded-3xl p-6 border border-brand-brown/10 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="space-y-2">
+          <div class="w-12 h-12 rounded-2xl bg-pastel-peach flex items-center justify-center text-xl">
+            🎁
+          </div>
+          <h3 class="font-serif text-xl font-bold text-brand-brown">
+            Mimos & Brindes do Mês
+          </h3>
+          <p class="text-xs sm:text-sm text-brand-softBrown leading-relaxed">
+            Baixe seus arquivos imprimíveis exclusivos para membros (planners semanais, calendários e cartões fofos).
+          </p>
+        </div>
+        <a
+          href="#mimos"
+          class="w-full text-center py-3 rounded-full border border-brand-brown/25 text-brand-brown font-semibold text-xs sm:text-sm hover:bg-paper-warm transition-colors"
+        >
+          Ver Downloads Disponíveis ↓
+        </a>
+      </div>
+
+      <!-- Card 3: Gestão da Assinatura Square -->
+      <div class="bg-white rounded-3xl p-6 border border-brand-brown/10 shadow-sm flex flex-col justify-between space-y-4">
+        <div class="space-y-2">
+          <div class="w-12 h-12 rounded-2xl bg-pastel-lavender flex items-center justify-center text-xl">
+            💳
+          </div>
+          <h3 class="font-serif text-xl font-bold text-brand-brown">
+            Gerenciar Assinatura
+          </h3>
+          <p class="text-xs sm:text-sm text-brand-softBrown leading-relaxed">
+            Atualize seu cartão de crédito/débito, consulte seus recibos ou pause sua assinatura com total autonomia e segurança na Square Japão.
+          </p>
+        </div>
+        <a
+          href={squareManageUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full text-center py-3 rounded-full bg-paper-warm text-brand-brown border border-brand-brown/20 font-semibold text-xs sm:text-sm hover:bg-white transition-colors"
+        >
+          Abrir Portal Square Japão
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Seção de Mimos do Mês para Download -->
+    <div id="mimos" class="scroll-mt-24 p-8 sm:p-10 rounded-3xl bg-white border border-brand-brown/10 shadow-paper space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-brand-brown/10">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-brand-softBrown font-bold">Arquivos Digitais Gratuitos</span>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-brand-brown">
+            Mimos Exclusivos para Membros
+          </h2>
+        </div>
+        <span class="text-xs text-brand-softBrown bg-paper-warm px-3 py-1.5 rounded-full border border-brand-brown/10 self-start sm:self-auto">
+          Atualizado mensalmente
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        
+        <!-- Mimo 1: Planner Semanal -->
+        <div class="p-5 rounded-2xl bg-paper-warm/70 border border-brand-brown/10 flex items-center justify-between gap-4">
+          <div class="space-y-1">
+            <span class="text-[10px] uppercase font-bold text-brand-terracotta">PDF Imprimível (A4)</span>
+            <h4 class="font-serif font-bold text-brand-brown text-base">Planner Semanal Afetivo</h4>
+            <p class="text-xs text-brand-softBrown">Ideal para organizar seus turnos e rotina em casa.</p>
+          </div>
+          <a
+            href={whatsappVipUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="shrink-0 px-4 py-2 rounded-full bg-brand-brown text-white text-xs font-semibold hover:bg-brand-darkBrown transition-colors"
+          >
+            Solicitar PDF
+          </a>
+        </div>
+
+        <!-- Mimo 2: Calendário Floral do Mês -->
+        <div class="p-5 rounded-2xl bg-paper-warm/70 border border-brand-brown/10 flex items-center justify-between gap-4">
+          <div class="space-y-1">
+            <span class="text-[10px] uppercase font-bold text-brand-terracotta">Wallpaper & Print</span>
+            <h4 class="font-serif font-bold text-brand-brown text-base">Calendário Japão com Feriados</h4>
+            <p class="text-xs text-brand-softBrown">Com marcações de folgas e feriados escolares japoneses.</p>
+          </div>
+          <a
+            href={whatsappVipUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="shrink-0 px-4 py-2 rounded-full bg-brand-brown text-white text-xs font-semibold hover:bg-brand-darkBrown transition-colors"
+          >
+            Solicitar Print
+          </a>
+        </div>
+
+      </div>
+
+      <div class="text-center pt-2">
+        <p class="text-xs text-brand-softBrown italic">
+          💡 Os arquivos em alta resolução são enviados diretamente no seu WhatsApp sem custo adicional para membros do Clube.
+        </p>
+      </div>
+    </div>
+
+    <!-- Dúvidas Frequentes do Clube -->
+    <div class="mt-16 space-y-4 max-w-2xl mx-auto">
+      <h3 class="font-serif text-xl font-bold text-brand-brown text-center mb-6">
+        Perguntas Frequentes dos Membros
+      </h3>
+      <div class="p-4 rounded-2xl bg-white border border-brand-brown/10 space-y-1.5">
+        <h4 class="font-semibold text-sm text-brand-brown">Como uso meus 15% de desconto nas compras?</h4>
+        <p class="text-xs text-brand-softBrown leading-relaxed">
+          Basta clicar em qualquer botão de pedido no catálogo ou no botão da Linha VIP. A mensagem automática já inclui o aviso de membro ativo para aplicarmos o desconto imediato no orçamento!
+        </p>
+      </div>
+      <div class="p-4 rounded-2xl bg-white border border-brand-brown/10 space-y-1.5">
+        <h4 class="font-semibold text-sm text-brand-brown">Como cancelar ou trocar meu cartão de crédito?</h4>
+        <p class="text-xs text-brand-softBrown leading-relaxed">
+          Você tem total liberdade! Acesse o e-mail de confirmação enviado pela Square Japão ou clique no botão "Abrir Portal Square Japão" acima para atualizar dados ou cancelar com 1 clique a qualquer momento.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  // Personalização do nome do membro via LocalStorage
+  const nameDisplay = document.getElementById('member-name-display');
+  const editBtn = document.getElementById('edit-name-btn');
+
+  const savedName = localStorage.getItem('maniadaarte_member_name');
+  if (savedName && nameDisplay) {
+    nameDisplay.textContent = savedName;
+  }
+
+  editBtn?.addEventListener('click', () => {
+    const newName = prompt('Como gostaria que seu nome aparecesse na carteirinha do Clube?', nameDisplay?.textContent || '');
+    if (newName && newName.trim() !== '') {
+      const cleanName = newName.trim();
+      localStorage.setItem('maniadaarte_member_name', cleanName);
+      if (nameDisplay) {
+        nameDisplay.textContent = cleanName;
+      }
+    }
+  });
+</script>
