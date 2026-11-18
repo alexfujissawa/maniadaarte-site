@@ -21,13 +21,25 @@ const {
         <!-- Conteúdo Textual / Conversão -->
         <div class="lg:col-span-7 space-y-6">
           
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pastel-rose border border-brand-rose/40 text-brand-brown text-xs sm:text-sm font-semibold tracking-wide">
-            <span class="text-brand-terracotta">✨</span>
-            <span>Clube Mania da Arte • Japão</span>
+          <div class="flex flex-wrap items-center gap-2">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pastel-rose border border-brand-rose/40 text-brand-brown text-xs sm:text-sm font-semibold tracking-wide">
+              <span class="text-brand-terracotta">✨</span>
+              <span>Clube Mania da Arte • Japão</span>
+            </div>
+
+            <!-- Selo de Bônus com Símbolo de Mais (+) -->
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-terracotta text-white text-xs font-bold shadow-xs">
+              <span class="w-4 h-4 rounded-full bg-white text-brand-terracotta flex items-center justify-center font-black text-[10px]">+</span>
+              <span>BÔNUS: 1 Topo de Bolo Grátis/ano</span>
+            </div>
           </div>
 
           <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-brown leading-[1.15] tracking-tight">
-            Ganhe <span class="text-brand-terracotta underline decoration-pastel-rose decoration-wavy decoration-2">15% de desconto</span> em todas as suas encomendas.
+            Ganhe <span class="text-brand-terracotta underline decoration-pastel-rose decoration-wavy decoration-2">15% de desconto</span>
+            <span class="text-brand-brown inline-flex items-center gap-1 text-2xl sm:text-3xl font-medium">
+              <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-brand-terracotta text-white inline-flex items-center justify-center font-black text-xs sm:text-sm">+</span>
+              <span class="text-brand-terracotta font-serif font-bold">1 Topo de Bolo</span>
+            </span>
           </h1>
 
           <p class="text-base sm:text-lg text-brand-softBrown leading-relaxed">
@@ -52,12 +64,24 @@ const {
               <div class="w-5 h-5 rounded-full bg-pastel-lavender flex items-center justify-center shrink-0 mt-0.5 text-brand-brown font-bold text-xs">✓</div>
               <p class="text-sm text-brand-brown font-medium"><strong class="font-bold">Sem carência:</strong> cancele com 1 clique</p>
             </div>
-            <!-- Novo Benefício de Aniversário de 12 Meses -->
-            <div class="sm:col-span-2 flex items-start gap-3 p-3.5 rounded-2xl bg-pastel-peach/50 border border-brand-rose/40">
-              <div class="w-6 h-6 rounded-full bg-brand-terracotta text-white flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs shadow-sm">🎂</div>
-              <div class="text-sm text-brand-brown">
-                <p class="font-bold text-brand-brown">A cada 12 meses de Clube: ganhe 1 Topo de Bolo de presente!</p>
-                <p class="text-[11px] text-brand-softBrown/80 mt-0.5 italic">*Nome e idade, para bolo de até 20cm.</p>
+            <!-- Benefício de Aniversário de 12 Meses com Símbolo de Mais (+) Bem Visível -->
+            <div class="sm:col-span-2 flex items-start gap-3.5 p-4 rounded-2xl bg-gradient-to-r from-pastel-peach/90 via-white to-pastel-rose/50 border-2 border-brand-rose/60 shadow-sm">
+              <div class="w-8 h-8 rounded-full bg-brand-terracotta text-white flex items-center justify-center shrink-0 font-black text-lg shadow-sm">
+                +
+              </div>
+              <div class="text-sm text-brand-brown flex-1">
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] font-black uppercase tracking-wider bg-brand-terracotta text-white px-2 py-0.5 rounded-full">
+                    + BÔNUS INCLUSO
+                  </span>
+                  <span class="text-xs font-bold text-brand-terracotta">100% Grátis</span>
+                </div>
+                <p class="font-bold text-brand-brown text-sm sm:text-base mt-1">
+                  A cada 12 meses de Clube: ganhe 1 Topo de Bolo de presente! 🎂
+                </p>
+                <p class="text-[11px] text-brand-softBrown/80 mt-0.5 italic">
+                  *Nome e idade, para bolo de até 20cm.
+                </p>
               </div>
             </div>
           </div>
@@ -70,7 +94,7 @@ const {
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-brand-brown text-paper-warm text-base font-semibold hover:bg-brand-darkBrown hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 shadow-md group"
             >
-              <span>Quero 15% OFF • Assinar por ¥500/mês</span>
+              <span>Quero 15% OFF + Topo Grátis • Assinar por ¥500/mês</span>
               <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
               </svg>
@@ -113,6 +137,10 @@ const {
               <div class="flex items-baseline gap-2">
                 <span class="font-serif text-5xl font-extrabold text-brand-brown">¥500</span>
                 <span class="text-brand-softBrown text-sm font-medium">/ mês</span>
+              </div>
+              <div class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-terracotta bg-pastel-peach px-2.5 py-1 rounded-lg border border-brand-rose/40 mt-1">
+                <span class="w-4 h-4 rounded-full bg-brand-terracotta text-white flex items-center justify-center font-black text-[10px]">+</span>
+                <span>15% OFF em Tudo + 1 Topo Grátis</span>
               </div>
               <p class="text-xs text-brand-softBrown italic">Menos de ¥17 por dia. Se paga com o desconto no primeiro pedido.</p>
             </div>
