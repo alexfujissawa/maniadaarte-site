@@ -43,8 +43,8 @@ const conclusaoObrigatoria = `---
 
 Se você sonha com uma festa cheia de amor, uma lembrancinha inesquecível ou quer presentear alguém especial aqui no Japão, a **Equipe Mania da Arte** está pronta para sonhar junto com você.
 
-✨ **Vantagem para Membros do Clube:** 
-Lembre-se de que os membros do nosso **Clube Mania da Arte** garantem **15% de desconto** imediato em todas as peças do catálogo por apenas **¥500/mês**, além de prioridade na fila de confecção!
+✨ **Vantagens para Membros do Clube:** 
+Lembre-se de que os membros do nosso **Clube Mania da Arte** garantem **15% de desconto** imediato em todas as peças do catálogo por apenas **¥500/mês**, prioridade na confecção e ganham **1 Topo de Bolo de presente a cada 12 meses** de clube! *(Nome e idade, para bolo de até 20cm)*.
 
 Fale conosco diretamente pelo WhatsApp no Japão: **[+81 70-2297-3498](https://wa.me/817022973498)** e receba a prévia digital da sua arte com todo o carinho.
 `;
