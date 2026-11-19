@@ -22,17 +22,17 @@ const squareCheckoutUrl = "https://square.link/u/maniadaarte";
 >
   <Header />
 
-  <main class="py-12 md:py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow">
+  <main class="flex-grow flex flex-col justify-center py-6 sm:py-10 md:py-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-h-[calc(100vh-240px)]">
 
     <!-- TELA DE BLOQUEIO / GATE DE AUTENTICAÇÃO -->
-    <div id="gate-container" class="max-w-md mx-auto my-8">
-      <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-brand-rose/40 shadow-paper space-y-6 text-center">
+    <div id="gate-container" class="w-full max-w-md mx-auto my-auto py-1">
+      <div class="bg-white rounded-3xl p-6 sm:p-7 border-2 border-brand-rose/40 shadow-paper space-y-4 sm:space-y-5 text-center">
         
-        <div class="w-16 h-16 rounded-full bg-pastel-rose/80 border border-brand-rose/40 text-brand-terracotta mx-auto flex items-center justify-center text-2xl shadow-xs">
+        <div class="w-14 h-14 rounded-2xl bg-pastel-rose/80 border border-brand-rose/40 text-brand-terracotta mx-auto flex items-center justify-center text-2xl shadow-xs">
           🔒
         </div>
 
-        <div class="space-y-2">
+        <div class="space-y-1.5">
           <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pastel-rose border border-brand-rose/40 text-brand-brown text-xs font-semibold">
             <span>✨</span>
             <span>Área Restrita a Assinantes</span>
@@ -46,7 +46,7 @@ const squareCheckoutUrl = "https://square.link/u/maniadaarte";
         </div>
 
         <!-- Formulário de Chave de Acesso -->
-        <form id="member-key-form" class="space-y-3 pt-2 text-left">
+        <form id="member-key-form" class="space-y-3 pt-1 text-left">
           <label for="member-key-input" class="block text-xs font-bold uppercase tracking-wider text-brand-brown">
             Chave de Acesso ou Senha de Membro:
           </label>
@@ -62,33 +62,33 @@ const squareCheckoutUrl = "https://square.link/u/maniadaarte";
             />
           </div>
 
-          <p id="member-key-error" class="hidden text-xs text-red-600 font-medium pt-1">
+          <p id="member-key-error" class="hidden text-xs text-red-600 font-medium pt-0.5">
             ⚠️ Chave incorreta. Verifique os dados ou solicite suporte abaixo.
           </p>
 
           <button
             type="submit"
-            class="w-full py-3.5 px-6 rounded-full bg-brand-brown text-paper-warm font-semibold text-sm hover:bg-brand-darkBrown transition-all duration-200 shadow-sm hover:shadow"
+            class="w-full py-3 px-6 rounded-full bg-brand-brown text-paper-warm font-semibold text-sm hover:bg-brand-darkBrown transition-all duration-200 shadow-sm hover:shadow active:scale-[0.99]"
           >
             Desbloquear Minha Carteirinha VIP →
           </button>
         </form>
 
-        <div class="pt-4 border-t border-brand-brown/10 space-y-3 text-xs text-brand-softBrown">
-          <div class="p-3.5 rounded-2xl bg-paper-warm/70 border border-brand-brown/10 space-y-1.5 text-left">
-            <p class="font-bold text-brand-brown">Ainda não é assinante do Clube?</p>
-            <p class="text-[11px] leading-relaxed">Assine por ¥500/mês na Square Japão e garanta 15% OFF em todas as encomendas + Topo de Bolo grátis anual.</p>
+        <div class="pt-3 border-t border-brand-brown/10 space-y-2.5 text-xs text-brand-softBrown">
+          <div class="p-3.5 rounded-2xl bg-paper-warm/70 border border-brand-brown/10 space-y-1 text-left">
+            <p class="font-bold text-brand-brown text-xs">Ainda não é assinante do Clube?</p>
+            <p class="text-[11px] leading-relaxed text-brand-softBrown">Assine por ¥500/mês na Square Japão e garanta 15% OFF em todas as encomendas + Topo de Bolo grátis anual.</p>
             <a
               href={squareCheckoutUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-block mt-1 font-semibold text-brand-terracotta hover:underline"
+              class="inline-block mt-0.5 font-semibold text-brand-terracotta hover:underline text-xs"
             >
               Quero assinar o Clube na Square →
             </a>
           </div>
 
-          <div class="text-center pt-1">
+          <div class="text-center pt-0.5">
             <a
               href={whatsappKeyUrl}
               target="_blank"
