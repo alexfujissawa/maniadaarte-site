@@ -3,12 +3,17 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 
-const whatsappNumber = "817022973498";
+const whatsappNumber = "817084150288";
 const whatsappVipMsg = encodeURIComponent(
   "Olá Equipe Mania da Arte! Sou membro ativo do Clube e gostaria de fazer uma encomenda com meus 15% de desconto e atendimento prioritário!"
 );
+const whatsappKeyRequestMsg = encodeURIComponent(
+  "Olá Equipe Mania da Arte! Já sou assinante do Clube na Square e gostaria de receber minha chave de acesso para o Portal do Membro VIP."
+);
 const whatsappVipUrl = `https://wa.me/${whatsappNumber}?text=${whatsappVipMsg}`;
+const whatsappKeyUrl = `https://wa.me/${whatsappNumber}?text=${whatsappKeyRequestMsg}`;
 const squareManageUrl = "https://square.link/u/maniadaarte"; // Link da Square Japão para gerenciar assinatura
+const squareCheckoutUrl = "https://square.link/u/maniadaarte";
 ---
 
 <Layout
@@ -18,20 +23,117 @@ const squareManageUrl = "https://square.link/u/maniadaarte"; // Link da Square J
   <Header />
 
   <main class="py-12 md:py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow">
-    
-    <!-- Cabeçalho de Boas-Vindas -->
-    <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pastel-rose border border-brand-rose/40 text-brand-brown text-xs font-semibold">
-        <span class="text-brand-terracotta">✨</span>
-        <span>Área Exclusiva de Membros</span>
+
+    <!-- TELA DE BLOQUEIO / GATE DE AUTENTICAÇÃO -->
+    <div id="gate-container" class="max-w-md mx-auto my-8">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-brand-rose/40 shadow-paper space-y-6 text-center">
+        
+        <div class="w-16 h-16 rounded-full bg-pastel-rose/80 border border-brand-rose/40 text-brand-terracotta mx-auto flex items-center justify-center text-2xl shadow-xs">
+          🔒
+        </div>
+
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pastel-rose border border-brand-rose/40 text-brand-brown text-xs font-semibold">
+            <span>✨</span>
+            <span>Área Restrita a Assinantes</span>
+          </div>
+          <h1 class="font-serif text-2xl sm:text-3xl font-bold text-brand-brown">
+            Portal do Membro VIP
+          </h1>
+          <p class="text-xs sm:text-sm text-brand-softBrown leading-relaxed">
+            A carteirinha digital, cupom de 15% OFF e mimos são exclusivos para assinantes ativos do Clube Mania da Arte.
+          </p>
+        </div>
+
+        <!-- Formulário de Chave de Acesso -->
+        <form id="member-key-form" class="space-y-3 pt-2 text-left">
+          <label for="member-key-input" class="block text-xs font-bold uppercase tracking-wider text-brand-brown">
+            Chave de Acesso ou Senha de Membro:
+          </label>
+          <div class="relative">
+            <input
+              type="text"
+              id="member-key-input"
+              name="member_key"
+              autocomplete="off"
+              required
+              placeholder="Digite sua chave (Ex: MANIAVIP)"
+              class="w-full px-4 py-3 rounded-2xl border border-brand-brown/20 bg-paper-warm/50 text-brand-brown text-sm focus:outline-none focus:ring-2 focus:ring-brand-rose/60 focus:bg-white transition-all uppercase tracking-wider font-mono placeholder:normal-case placeholder:font-sans"
+            />
+          </div>
+
+          <p id="member-key-error" class="hidden text-xs text-red-600 font-medium pt-1">
+            ⚠️ Chave incorreta. Verifique os dados ou solicite suporte abaixo.
+          </p>
+
+          <button
+            type="submit"
+            class="w-full py-3.5 px-6 rounded-full bg-brand-brown text-paper-warm font-semibold text-sm hover:bg-brand-darkBrown transition-all duration-200 shadow-sm hover:shadow"
+          >
+            Desbloquear Minha Carteirinha VIP →
+          </button>
+        </form>
+
+        <div class="pt-4 border-t border-brand-brown/10 space-y-3 text-xs text-brand-softBrown">
+          <div class="p-3.5 rounded-2xl bg-paper-warm/70 border border-brand-brown/10 space-y-1.5 text-left">
+            <p class="font-bold text-brand-brown">Ainda não é assinante do Clube?</p>
+            <p class="text-[11px] leading-relaxed">Assine por ¥500/mês na Square Japão e garanta 15% OFF em todas as encomendas + Topo de Bolo grátis anual.</p>
+            <a
+              href={squareCheckoutUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block mt-1 font-semibold text-brand-terracotta hover:underline"
+            >
+              Quero assinar o Clube na Square →
+            </a>
+          </div>
+
+          <div class="text-center pt-1">
+            <a
+              href={whatsappKeyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs text-brand-softBrown hover:text-brand-brown underline"
+            >
+              Já assinou e não recebeu sua chave? Fale no WhatsApp
+            </a>
+          </div>
+        </div>
+
       </div>
-      <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-brown">
-        Portal do Clube Mania da Arte
-      </h1>
-      <p class="text-base text-brand-softBrown leading-relaxed">
-        Seja bem-vindo(a) ao seu espaço especial! Aqui você acessa seus benefícios exclusivos, downloads do mês e canal VIP no WhatsApp.
-      </p>
     </div>
+
+    <!-- CONTEÚDO PROTEGIDO DO PORTAL (LIBERADO APÓS AUTENTICAÇÃO) -->
+    <div id="portal-content" class="hidden" style="display: none;">
+      
+      <!-- Barra superior do membro autenticado -->
+      <div class="flex items-center justify-between pb-6 mb-8 border-b border-brand-brown/10 text-xs">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
+          <span class="text-brand-brown font-semibold">Membro Autenticado</span>
+        </div>
+        <button
+          id="member-logout-btn"
+          type="button"
+          class="text-brand-softBrown hover:text-brand-terracotta font-medium underline cursor-pointer"
+        >
+          Bloquear / Sair da Carteirinha
+        </button>
+      </div>
+
+      <!-- Cabeçalho de Boas-Vindas -->
+      <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pastel-rose border border-brand-rose/40 text-brand-brown text-xs font-semibold">
+          <span class="text-brand-terracotta">✨</span>
+          <span>Área Exclusiva de Membros</span>
+        </div>
+        <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-brown">
+          Portal do Clube Mania da Arte
+        </h1>
+        <p class="text-base text-brand-softBrown leading-relaxed">
+          Seja bem-vindo(a) ao seu espaço especial! Aqui você acessa seus benefícios exclusivos, downloads do mês e canal VIP no WhatsApp.
+        </p>
+      </div>
 
     <!-- Carteirinha Digital Interativa do Membro -->
     <div class="mb-14">
@@ -127,7 +229,7 @@ const squareManageUrl = "https://square.link/u/maniadaarte"; // Link da Square J
           rel="noopener noreferrer"
           class="w-full text-center py-3 rounded-full bg-brand-brown text-paper-warm font-semibold text-xs sm:text-sm hover:bg-brand-darkBrown transition-colors shadow"
         >
-          Falar na Linha VIP (+81 70-2297-3498)
+          Falar na Linha VIP (+81 70-8415-0288)
         </a>
       </div>
 
@@ -270,6 +372,64 @@ const squareManageUrl = "https://square.link/u/maniadaarte"; // Link da Square J
 </Layout>
 
 <script>
+  // Chaves válidas de acesso de membros (personalizáveis)
+  const VALID_KEYS = ['MANIAVIP', 'CLUBE2026', 'VIP2026', 'MANIADAARTE'];
+  const AUTH_STORAGE_KEY = 'maniadaarte_member_authenticated';
+
+  const gateContainer = document.getElementById('gate-container');
+  const portalContent = document.getElementById('portal-content');
+  const keyForm = document.getElementById('member-key-form');
+  const keyInput = document.getElementById('member-key-input') as HTMLInputElement | null;
+  const keyError = document.getElementById('member-key-error');
+  const logoutBtn = document.getElementById('member-logout-btn');
+
+  function renderAuthState() {
+    const isAuth = localStorage.getItem(AUTH_STORAGE_KEY) === 'true';
+    if (isAuth) {
+      if (gateContainer) {
+        gateContainer.classList.add('hidden');
+        gateContainer.style.display = 'none';
+      }
+      if (portalContent) {
+        portalContent.classList.remove('hidden');
+        portalContent.style.display = 'block';
+      }
+    } else {
+      if (gateContainer) {
+        gateContainer.classList.remove('hidden');
+        gateContainer.style.display = 'block';
+      }
+      if (portalContent) {
+        portalContent.classList.add('hidden');
+        portalContent.style.display = 'none';
+      }
+    }
+  }
+
+  // Checagem imediata ao carregar a página
+  renderAuthState();
+
+  keyForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const val = (keyInput?.value || '').trim().toUpperCase();
+    if (VALID_KEYS.includes(val)) {
+      localStorage.setItem(AUTH_STORAGE_KEY, 'true');
+      keyError?.classList.add('hidden');
+      renderAuthState();
+    } else {
+      keyError?.classList.remove('hidden');
+      if (keyInput) {
+        keyInput.focus();
+        keyInput.select();
+      }
+    }
+  });
+
+  logoutBtn?.addEventListener('click', () => {
+    localStorage.removeItem(AUTH_STORAGE_KEY);
+    renderAuthState();
+  });
+
   // Personalização do nome do membro via LocalStorage
   const nameDisplay = document.getElementById('member-name-display');
   const editBtn = document.getElementById('edit-name-btn');
