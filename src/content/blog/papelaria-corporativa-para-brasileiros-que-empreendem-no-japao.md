@@ -3,7 +3,7 @@ titulo: "Papelaria Corporativa & Identidade Visual para Quem Empreende no Japão
 descricao: "A importância de cartões de visita elegantes (Meishi) e embalagens personalizadas para confeiteiras, artesãs e prestadores de serviço no Japão."
 data: 2026-11-17
 categoria: "corporativo"
-imagem: "/images/cartao-visita-mania.png"
+imagem: "/images/cartao-visita-meishi-japao.jpg"
 corFundoPastel: "bg-[#E2ECE9]"
 autor: "Equipe Mania da Arte"
 tags: ["empreendedorismo", "meishi", "cartão de visita", "negócios no japão"]
@@ -13,6 +13,8 @@ destaque: false
 No Japão, a cultura de troca de cartões de visita (*Meishi Koukan*) é sagrada. Entregar um cartão de qualidade não é apenas passar o seu contato: é um sinal de respeito, profissionalismo e seriedade aos olhos de clientes brasileiros e japoneses.
 
 Para confeiteiras, cabeleireiras, manicures, mecânicos ou consultores que atuam no Japão, a primeira impressão faz toda a diferença para justificar o valor do seu trabalho.
+
+![Cartões de visita Meishi e papelaria corporativa artesanal no Japão](/images/cartao-visita-meishi-japao.jpg)
 
 ---
 

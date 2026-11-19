@@ -3,7 +3,7 @@ titulo: "Como Organizar sua Rotina no Japão com Agendas e Cadernos Personalizad
 descricao: "Dicas práticas para conciliar o trabalho em fábrica ou escritório com as metas pessoais e familiares morando no Japão, usando papelaria afetiva sob medida."
 data: 2026-11-15
 categoria: "rotina"
-imagem: "/images/caderno-mania.png"
+imagem: "/images/caderno-agenda-japao.jpg"
 corFundoPastel: "bg-[#F3E5E8]"
 autor: "Equipe Mania da Arte"
 tags: ["organização", "rotina no japão", "agendas", "papelaria afetiva"]
@@ -13,6 +13,8 @@ destaque: true
 A vida no Japão tem um ritmo único e acelerado. Entre turnos de trabalho, horas extras (*zangyou*), compromissos escolares das crianças e a gestão da casa, é muito fácil se sentir sobrecarregado quando tudo fica apenas na memória ou em notas soltas no celular.
 
 É exatamente por isso que o método tradicional de planejamento no papel continua sendo a ferramenta mais poderosa para clarear a mente e trazer tranquilidade para o seu dia a dia.
+
+![Agendas e planners físicos personalizados para organizar a rotina familiar e de trabalho no Japão](/images/caderno-agenda-japao.jpg)
 
 ---
 

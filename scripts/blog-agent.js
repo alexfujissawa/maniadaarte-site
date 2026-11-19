@@ -28,7 +28,7 @@ const bancoTemas = [
     descricao: "Inspirações delicadas de mimos, caixas personalizadas e tags para agradecer visitas e colegas de trabalho na chegada do seu bebê no Japão.",
     categoria: "lembrancinhas",
     corFundoPastel: "bg-[#F3E5E8]",
-    imagem: "/images/lembrancinha-mania.png",
+    imagem: "/images/lembrancinha-maternidade-japao.jpg",
     tags: ["maternidade", "lembrancinhas", "bebê no japão", "família"],
     secoes: [
       {
@@ -50,7 +50,7 @@ const bancoTemas = [
     descricao: "Dicas de etiquetas personalizadas, topos de bolo temáticos e lembrancinhas compactas para comemorações escolares no Hoikuen e Shougakkou.",
     categoria: "festas-infantis",
     corFundoPastel: "bg-[#FCF0E3]",
-    imagem: "/images/topo-bolo-mania.png",
+    imagem: "/images/festas-infantis-japao.jpg",
     tags: ["festas infantis", "hoikuen", "shougakkou", "aniversário no japão"],
     secoes: [
       {
@@ -72,7 +72,7 @@ const bancoTemas = [
     descricao: "Como valorizar qualquer comemoração no Japão com esculturas de papel personalizadas com nome, idade e papéis especiais importados.",
     categoria: "topos-de-bolo",
     corFundoPastel: "bg-[#FCF0E3]",
-    imagem: "/images/topo-bolo-mania.png",
+    imagem: "/images/topo-bolo-3d-japao.jpg",
     tags: ["topos de bolo", "papercraft", "aniversário", "confeitaria japão"],
     secoes: [
       {
@@ -90,7 +90,7 @@ const bancoTemas = [
     descricao: "Surpreenda quem você ama no Japão com presentes personalizados com frases especiais, capa dura e laminação fosca premium.",
     categoria: "presentes-afetivos",
     corFundoPastel: "bg-[#F3E5E8]",
-    imagem: "/images/caderno-mania.png",
+    imagem: "/images/caderno-agenda-japao.jpg",
     tags: ["presentes afetivos", "agendas", "mimos no japão", "amizade"],
     secoes: [
       {
@@ -108,7 +108,7 @@ const bancoTemas = [
     descricao: "Truques práticos para harmonizar painéis de papel, caixas pirâmide e suporte de doces no espaço do seu apartamento japonês.",
     categoria: "dicas-de-decoracao",
     corFundoPastel: "bg-[#F5EFF6]",
-    imagem: "/images/lembrancinha-mania.png",
+    imagem: "/images/festas-infantis-japao.jpg",
     tags: ["decoração", "apartamento no japão", "festa em casa", "dicas"],
     secoes: [
       {
@@ -126,7 +126,7 @@ const bancoTemas = [
     descricao: "Como preparar uma mesa de chá revelação intimista e inesquecível no Japão com caixinhas interativas e topos de bolo personalizados.",
     categoria: "lembrancinhas",
     corFundoPastel: "bg-[#F3E5E8]",
-    imagem: "/images/lembrancinha-mania.png",
+    imagem: "/images/lembrancinha-maternidade-japao.jpg",
     tags: ["chá revelação", "chá de bebê", "maternidade japão", "família"],
     secoes: [
       {
@@ -144,7 +144,7 @@ const bancoTemas = [
     descricao: "Marcadores de página, mini livretos de oração e caixas anjinho para momentos de fé e bênção com a comunidade brasileira no Japão.",
     categoria: "presentes-afetivos",
     corFundoPastel: "bg-[#FCF0E3]",
-    imagem: "/images/caderno-mania.png",
+    imagem: "/images/lembrancinha-maternidade-japao.jpg",
     tags: ["batizado no japão", "primeira comunhão", "fé", "lembrancinhas"],
     secoes: [
       {
@@ -162,7 +162,7 @@ const bancoTemas = [
     descricao: "O planner perfeito para quem trabalha em turnos alternados (Koutai) nas fábricas do Japão e quer manter o tempo com a família protegido.",
     categoria: "rotina",
     corFundoPastel: "bg-[#E2ECE9]",
-    imagem: "/images/caderno-mania.png",
+    imagem: "/images/caderno-agenda-japao.jpg",
     tags: ["turnos no japão", "koutai", "rotina", "planner"],
     secoes: [
       {
@@ -223,6 +223,8 @@ draft: ${isDraft}
 
 ${temaEscolhido.descricao}
 
+![${temaEscolhido.titulo}](${temaEscolhido.imagem})
+
 ---
 
 `;
@@ -270,7 +272,7 @@ if (temaArgIndex !== -1 && args[temaArgIndex + 1]) {
     descricao: `Ideias delicadas e dicas especiais sobre ${tituloCustom.toLowerCase()} para quem mora no Japão, criadas com carinho pela Equipe Mania da Arte.`,
     categoria: "dicas-de-decoracao",
     corFundoPastel: "bg-[#F3E5E8]",
-    imagem: "/images/caderno-mania.png",
+    imagem: "/images/caderno-agenda-japao.jpg",
     tags: ["papelaria afetiva", "japão", "família", "dicas criativas"],
     secoes: [
       {
@@ -301,7 +303,7 @@ if (temaArgIndex !== -1 && args[temaArgIndex + 1]) {
       descricao: `Novas ideias criativas de papelaria artesanal para decorar, organizar e comemorar suas datas especiais no Japão.`,
       categoria: "dicas-de-decoracao",
       corFundoPastel: "bg-[#FCF0E3]",
-      imagem: "/images/caderno-mania.png",
+      imagem: "/images/caderno-agenda-japao.jpg",
       tags: ["papelaria afetiva", "novidades", "japão", "decoração"],
       secoes: [
         {

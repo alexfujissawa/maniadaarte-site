@@ -2,9 +2,9 @@ name: Publicador Automático do Blog (Seg e Qui - 06h Japão)
 
 on:
   schedule:
-    # 06:00 da manhã no Japão (JST / UTC+9) nas Segundas e Quintas-feiras
-    # Equivale a 21:00 UTC nos Domingos e Quartas-feiras
-    - cron: '0 21 * * 0,3'
+    # 06:15 da manhã no Japão (JST / UTC+9) nas Segundas e Quintas-feiras
+    # Equivale a 21:15 UTC nos Domingos e Quartas-feiras (minuto 15 evita descarte/atraso por pico de servidores no GitHub)
+    - cron: '15 21 * * 0,3'
   workflow_dispatch: # Permite testar clicando em "Run workflow" no GitHub
 
 permissions:
@@ -35,7 +35,7 @@ jobs:
         run: |
           git config --global user.name "Equipe Mania da Arte"
           git config --global user.email "bot@maniadaarte.digital"
-          git add src/content/blog/
+          git add src/content/blog/ public/images/
           if git diff --staged --quiet; then
             echo "Nenhum novo post pendente."
           else

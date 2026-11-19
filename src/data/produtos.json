@@ -5,7 +5,7 @@
     "categoria": "rotina",
     "preco": "Sob consulta",
     "avisoClube": "✨ Membros do Clube: 15% de desconto neste item",
-    "imagem": "/images/caderno-mania.png",
+    "imagem": "/images/caderno-agenda-japao.jpg",
     "corFundoPastel": "bg-[#F3E5E8]",
     "whatsappMsg": "Olá! Quero encomendar um caderno personalizado e já sou membro do Clube Mania da Arte para ter os 15% de desconto!"
   },
@@ -15,7 +15,7 @@
     "categoria": "festas",
     "preco": "Sob consulta",
     "avisoClube": "✨ Membros do Clube: 15% de desconto neste item",
-    "imagem": "/images/topo-bolo-mania.png",
+    "imagem": "/images/topo-bolo-3d-japao.jpg",
     "corFundoPastel": "bg-[#FCF0E3]",
     "whatsappMsg": "Olá! Gostaria de fazer um orçamento de Topo de Bolo. Quero usar meus 15% de desconto de membro do Clube."
   },
@@ -25,7 +25,7 @@
     "categoria": "corporativo",
     "preco": "Sob consulta",
     "avisoClube": "✨ Membros do Clube: 15% de desconto neste item",
-    "imagem": "/images/cartao-visita-mania.png",
+    "imagem": "/images/cartao-visita-meishi-japao.jpg",
     "corFundoPastel": "bg-[#E2ECE9]",
     "whatsappMsg": "Olá! Quero produzir meus cartões de visita e aproveitar o desconto de 15% para membros do Clube."
   },
@@ -35,7 +35,7 @@
     "categoria": "festas",
     "preco": "Sob consulta",
     "avisoClube": "✨ Membros do Clube: 15% de desconto neste item",
-    "imagem": "/images/lembrancinha-mania.png",
+    "imagem": "/images/lembrancinha-maternidade-japao.jpg",
     "corFundoPastel": "bg-[#F5EFF6]",
     "whatsappMsg": "Olá! Vi as opções de lembrancinhas personalizadas no site e gostaria de saber os modelos disponíveis para o Clube."
   }

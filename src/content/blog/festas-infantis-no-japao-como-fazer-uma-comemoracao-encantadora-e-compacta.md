@@ -1,9 +1,9 @@
 ---
 titulo: "Festas Infantis no Japão: Como Fazer uma Comemoração Encantadora e Compacta"
 descricao: "Dicas de etiquetas personalizadas, topos de bolo temáticos e lembrancinhas compactas para comemorações escolares no Hoikuen e Shougakkou."
-data: 2026-11-18
+data: 2026-11-19
 categoria: "festas-infantis"
-imagem: "/images/topo-bolo-mania.png"
+imagem: "/images/festas-infantis-japao.jpg"
 corFundoPastel: "bg-[#FCF0E3]"
 autor: "Equipe Mania da Arte"
 tags: ["festas infantis","hoikuen","shougakkou","aniversário no japão"]
@@ -12,6 +12,8 @@ draft: false
 ---
 
 Dicas de etiquetas personalizadas, topos de bolo temáticos e lembrancinhas compactas para comemorações escolares no Hoikuen e Shougakkou.
+
+![Decoração de festa infantil compacta e lembrancinhas artesanais no Japão](/images/festas-infantis-japao.jpg)
 
 ---
 

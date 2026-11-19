@@ -3,7 +3,7 @@ titulo: "Topo de Bolo Personalizado: O Toque Mágico para Aniversários no Japã
 descricao: "Como criar festas inesquecíveis mesmo longe do Brasil com topos de bolo em camadas de papel, efeitos 3D e temas exclusivos feitos no Japão."
 data: 2026-11-16
 categoria: "topos-de-bolo"
-imagem: "/images/topo-bolo-mania.png"
+imagem: "/images/topo-bolo-3d-japao.jpg"
 corFundoPastel: "bg-[#FCF0E3]"
 autor: "Equipe Mania da Arte"
 tags: ["festas", "topo de bolo", "aniversário no japão", "maternidade"]
@@ -13,6 +13,8 @@ destaque: false
 Comemorar o aniversário de um filho, cônjuge ou amigo no Japão é sempre uma ocasião carregada de emoção e saudade de casa. No Brasil, estamos acostumados com festas cheias de detalhes e decorações ricas. No Japão, mesmo com espaços menores ou comemorações intimistas em casa, o bolo sempre assume o papel de protagonista.
 
 E é aí que o **Topo de Bolo Personalizado** entra em ação: ele tem o poder de transformar qualquer bolo simples em uma verdadeira obra de arte memorável.
+
+![Topo de bolo artesanal em camadas 3D papercraft com papéis especiais no Japão](/images/topo-bolo-3d-japao.jpg)
 
 ---
 

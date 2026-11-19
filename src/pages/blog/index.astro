@@ -98,14 +98,14 @@ function formatarData(data: Date) {
           <div>
             <!-- Box de Imagem Flutuante Estilo Papier -->
             <a href={`/blog/${post.slug}`} class="block overflow-hidden rounded-2xl relative">
-              <div class={`w-full aspect-[16/10] ${post.data.corFundoPastel} p-6 flex items-center justify-center`}>
-                <span class="absolute top-3 left-3 bg-white/95 text-brand-brown text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full shadow-sm z-10">
+              <div class={`w-full aspect-[16/10] ${post.data.corFundoPastel} relative overflow-hidden flex items-center justify-center`}>
+                <span class="absolute top-3 left-3 bg-white/95 text-brand-brown text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full shadow-sm z-10 backdrop-blur-sm">
                   {categoriaLabels[post.data.categoria] || post.data.categoria}
                 </span>
                 <img
                   src={post.data.imagem}
                   alt={post.data.titulo}
-                  class="w-3/4 h-3/4 object-contain filter drop-shadow-md group-hover:scale-105 group-hover:-translate-y-1 transition-all duration-300"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
                   loading="lazy"
                 />
               </div>

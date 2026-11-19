@@ -3,7 +3,7 @@ titulo: "Lembrancinhas de Maternidade no Japão: Como Celebrar a Chegada do Beb�
 descricao: "Inspirações delicadas de mimos, caixas personalizadas e tags para agradecer visitas e colegas de trabalho na chegada do seu bebê no Japão."
 data: 2026-11-18
 categoria: "lembrancinhas"
-imagem: "/images/lembrancinha-mania.png"
+imagem: "/images/lembrancinha-maternidade-japao.jpg"
 corFundoPastel: "bg-[#F3E5E8]"
 autor: "Equipe Mania da Arte"
 tags: ["maternidade","lembrancinhas","bebê no japão","família"]
@@ -12,6 +12,8 @@ draft: false
 ---
 
 Inspirações delicadas de mimos, caixas personalizadas e tags para agradecer visitas e colegas de trabalho na chegada do seu bebê no Japão.
+
+![Caixas de lembrancinhas artesanais de maternidade e mimos delicados no Japão](/images/lembrancinha-maternidade-japao.jpg)
 
 ---
 
