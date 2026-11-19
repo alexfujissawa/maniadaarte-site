@@ -79,32 +79,32 @@ const squareClubUrl = "https://square.link/u/maniadaarte";
     <div class="flex items-center justify-between h-24">
       
       <!-- Logo da Marca com Maior Destaque -->
-      <a href="/" class="flex items-center gap-3.5 group py-1.5" aria-label="Mania da Arte Home">
+      <a href="/" class="flex items-center gap-3 group py-1.5 shrink-0" aria-label="Mania da Arte Home">
         <div class="relative shrink-0">
           <img 
             src="/images/logo-mania.png" 
             alt="Mania da Arte Logo" 
-            class="h-14 w-14 sm:h-16 sm:w-16 rounded-2xl object-cover shadow-md border-2 border-brand-brown/10 group-hover:scale-105 group-hover:shadow-lg transition-all duration-300"
+            class="h-12 w-12 sm:h-14 sm:w-14 rounded-2xl object-cover shadow-sm border border-brand-brown/10 group-hover:scale-105 transition-all duration-300"
           />
         </div>
         <div class="flex flex-col justify-center shrink-0">
-          <span class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-brand-brown group-hover:text-brand-terracotta transition-colors leading-none mb-1 whitespace-nowrap">
+          <span class="font-serif text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-brand-brown group-hover:text-brand-terracotta transition-colors leading-none mb-1 whitespace-nowrap">
             Mania da Arte
           </span>
-          <span class="text-[10px] sm:text-[11px] tracking-[0.25em] sm:tracking-[0.28em] uppercase text-brand-softBrown font-semibold whitespace-nowrap">
+          <span class="text-[9px] sm:text-[10px] tracking-[0.22em] uppercase text-brand-softBrown font-semibold whitespace-nowrap">
             Papelaria Personalizada
           </span>
         </div>
       </a>
 
       <!-- Navegação Desktop -->
-      <nav class="hidden md:flex items-center space-x-5 lg:space-x-7 text-sm font-medium whitespace-nowrap">
+      <nav class="hidden lg:flex items-center space-x-4 xl:space-x-6 text-xs xl:text-sm font-medium whitespace-nowrap">
         <a href="/#catalogo" class="text-brand-brown hover:text-brand-terracotta transition-colors">
           Catálogo
         </a>
         <a href="/#clube" class="text-brand-brown hover:text-brand-terracotta transition-colors flex items-center gap-1.5">
           <span>Clube Mania da Arte</span>
-          <span class="bg-pastel-rose text-brand-brown text-[10px] font-bold px-2 py-0.5 rounded-full border border-brand-rose/40">
+          <span class="bg-pastel-rose text-brand-brown text-[10px] font-bold px-1.5 py-0.5 rounded-full border border-brand-rose/40">
             15% OFF
           </span>
         </a>
@@ -117,13 +117,13 @@ const squareClubUrl = "https://square.link/u/maniadaarte";
       </nav>
 
       <!-- Ações Diretas & Social -->
-      <div class="hidden sm:flex items-center space-x-2.5 lg:space-x-3.5 shrink-0 whitespace-nowrap">
+      <div class="hidden sm:flex items-center space-x-2 xl:space-x-3 shrink-0 whitespace-nowrap">
         <!-- Instagram -->
         <a
           href={instagramUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="p-2 text-brand-softBrown hover:text-brand-terracotta transition-colors rounded-full hover:bg-brand-brown/5"
+          class="hidden xl:flex p-2 text-brand-softBrown hover:text-brand-terracotta transition-colors rounded-full hover:bg-brand-brown/5"
           title="Siga @mania.daarte no Instagram"
           aria-label="Instagram da Mania da Arte"
         >
@@ -137,7 +137,7 @@ const squareClubUrl = "https://square.link/u/maniadaarte";
           href={`${whatsappBaseUrl}?text=${encodeURIComponent("Olá! Estou no site da Mania da Arte e gostaria de tirar uma dúvida sobre encomendas.")}`}
           target="_blank"
           rel="noopener noreferrer"
-          class="hidden lg:inline-flex items-center gap-2 text-xs font-semibold px-3 py-2 rounded-full border border-brand-brown/20 text-brand-brown hover:bg-brand-brown hover:text-white transition-all duration-300"
+          class="hidden 2xl:inline-flex items-center gap-2 text-xs font-semibold px-3 py-2 rounded-full border border-brand-brown/20 text-brand-brown hover:bg-brand-brown hover:text-white transition-all duration-300"
         >
           <svg class="w-4 h-4 fill-current text-green-600" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
@@ -150,7 +150,7 @@ const squareClubUrl = "https://square.link/u/maniadaarte";
           href={squareClubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2.5 rounded-full bg-brand-brown text-paper-warm hover:bg-brand-darkBrown shadow-sm hover:shadow transition-all duration-300"
+          class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 sm:px-4 py-2 rounded-full bg-brand-brown text-paper-warm hover:bg-brand-darkBrown shadow-sm hover:shadow transition-all duration-300"
         >
           <span>Assinar Clube</span>
           <span class="text-brand-rose">¥500/mês</span>
@@ -159,7 +159,7 @@ const squareClubUrl = "https://square.link/u/maniadaarte";
         <!-- Portal do Membro VIP -->
         <a
           href="/clube/portal"
-          class="hidden xl:inline-flex items-center gap-1 text-xs font-semibold px-3.5 py-2 rounded-full border border-brand-rose/50 bg-pastel-rose/70 text-brand-brown hover:bg-white transition-all shadow-sm"
+          class="inline-flex items-center gap-1 text-xs font-semibold px-3 py-2 rounded-full border border-brand-rose/50 bg-pastel-rose/70 text-brand-brown hover:bg-white transition-all shadow-sm"
         >
           <span>✨ Portal VIP</span>
         </a>
