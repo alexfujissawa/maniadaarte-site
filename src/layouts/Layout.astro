@@ -16,6 +16,35 @@ const ogImage = `${siteUrl}/images/og-image.jpg`;
 <!doctype html>
 <html lang="pt-BR" class="scroll-smooth">
   <head>
+    <!-- Google Tag Manager -->
+    <script is:inline async src="https://www.googletagmanager.com/gtm.js?id=GTM-K6KWBQ36"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Meta Pixel Code -->
+    <script is:inline>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '2346745599505949');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=2346745599505949&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -51,6 +80,10 @@ const ogImage = `${siteUrl}/images/og-image.jpg`;
     />
   </head>
   <body class="bg-paper text-brand-brown font-sans antialiased min-h-screen flex flex-col selection:bg-brand-rose/30 selection:text-brand-darkBrown relative">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6KWBQ36" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <!-- Efeito de textura sutil de papel -->
     <div
       class="fixed inset-0 pointer-events-none opacity-[0.035] z-50 mix-blend-multiply"
